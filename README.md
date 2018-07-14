@@ -1,2 +1,2 @@
-# reactpeople.org
+# React People
 React People lists and connects React developers around the world.
