@@ -1,10 +1,11 @@
 import React from 'react';
+import GoogleMap from '../GoogleMaps';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="w-screen h-screen flex items-center justify-center">
-        Welcome to <strong className="pl-1">React People</strong>.
+      <div className="w-screen h-screen">
+         <GoogleMap />
       </div>
     );
   }
