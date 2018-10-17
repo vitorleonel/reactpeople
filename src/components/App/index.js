@@ -1,13 +1,13 @@
 import React from 'react';
 import GoogleMap from '../GoogleMaps';
-import Navbar from '../Navbar';
+import SignIn from '../SignIn';
 
 class App extends React.Component {
   render() {
     return (
       <div className="w-screen h-screen">
          <GoogleMap />
-         <Navbar />
+         <SignIn />
       </div>
     );
   }
