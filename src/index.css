@@ -6308,6 +6308,14 @@ table {
   * @import "utilities/skew-transforms";
   */
 
+/**
+  * Google Maps
+  */
+
+.gm-fullscreen-control {
+  display: none !important;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

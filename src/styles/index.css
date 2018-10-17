@@ -60,3 +60,10 @@
   * @import "utilities/background-patterns";
   * @import "utilities/skew-transforms";
   */
+
+/**
+  * Google Maps
+  */
+.gm-fullscreen-control {
+  display: none!important;
+}
