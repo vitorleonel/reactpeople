@@ -1,4 +1,7 @@
 import React from 'react';
+import { Container } from './styles';
+
+
 import User from './user';
 import GitHubAuth from './github';
 
@@ -17,13 +20,13 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="w-16 h-16 bg-white p-3 rounded-full shadow fixed pin-t pin-r mt-4 mr-4 fixed">
+      <Container>
         {
           this.state.user
           ? <User />
           : <GitHubAuth authHandler={this.authHandler} />
         }
-      </div>
+      </Container>
     )
   }
 
