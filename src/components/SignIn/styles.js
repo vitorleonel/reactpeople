@@ -10,6 +10,7 @@ export const Container = styled.div`
   position: fixed;
   top: 1rem;
   right: 1rem;
+  z-index: 1000;
 
   .github {
     display: flex;
