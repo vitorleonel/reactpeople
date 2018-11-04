@@ -1,25 +1,18 @@
 {
-  "name": "react-people",
+  "name": "reactpeople",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "google-map-react": "^1.0.6",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-github-login": "^1.0.3",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "styled-components": "^4.0.3"
   },
   "scripts": {
-    "build:css": "postcss src/styles/index.css -o src/index.css",
-    "watch:css": "npm run build:css -- -w",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.1.0",
-    "postcss-cli": "^6.0.0",
-    "tailwindcss": "^0.6.4"
   }
 }

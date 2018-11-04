@@ -1,16 +1,13 @@
 import React from 'react';
-import GoogleMap from '../GoogleMaps';
+import { GlobalStyle, Wrapper } from './styles';
+
 import SignIn from '../SignIn';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="w-screen h-screen">
-         <GoogleMap />
-         <SignIn />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Wrapper>
+    <GlobalStyle />
+    <SignIn />
+  </Wrapper>
+);
 
 export default App;
