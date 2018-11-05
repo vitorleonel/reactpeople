@@ -7,7 +7,6 @@ import SignIn from '../SignIn';
 const App = () => (
   <Wrapper>
     <GlobalStyle />
-
     <MainMap />
     <SignIn />
   </Wrapper>

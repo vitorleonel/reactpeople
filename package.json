@@ -8,7 +8,9 @@
     "react-dom": "^16.4.1",
     "react-github-login": "^1.0.3",
     "react-leaflet": "^2.1.1",
+    "react-redux": "^5.1.0",
     "react-scripts": "1.1.4",
+    "redux": "^4.0.1",
     "styled-components": "^4.0.3"
   },
   "scripts": {
