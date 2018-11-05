@@ -6,7 +6,7 @@ export const Container = styled.div`
   background-color: white;
   padding:  0.75rem;
   border-radius: 9999px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0 ,0 , 0.10);
+  box-shadow: ${props => props.theme.shadow};
   position: fixed;
   top: 1rem;
   right: 1rem;
