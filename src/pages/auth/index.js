@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import api from '../../services/api';
 
-export default class Auth extends Component {
+class AuthPage extends Component {
 
   componentDidMount() {
     const code = new URLSearchParams(this.props.location.search).get('code');
@@ -24,3 +25,9 @@ export default class Auth extends Component {
   }
 
 }
+
+const mapDispatchToProps = dispatch => ({
+  setAuthHandler: data => dispatch(),
+});
+
+export default connect(null, mapDispatchToProps)(AuthPage);
