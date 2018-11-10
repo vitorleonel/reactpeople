@@ -22,7 +22,7 @@ export const Container = styled.div`
     cursor: pointer;
 
     svg {
-      width: 2.5rem;
+      width: 3.5rem;
     }
   }
 
@@ -34,5 +34,10 @@ export const Container = styled.div`
     justify-content: center;
     position: absolute;
     margin: -0.75rem;
+
+    img {
+      width: 3.5rem;
+      border-radius: 9999px;
+    }
   }
 `;

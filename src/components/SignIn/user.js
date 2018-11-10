@@ -1,8 +1,8 @@
 import React from 'react';
 
-const User = () => (
+const User = props => (
   <div className="user">
-    User
+    <img src={props.user.photo} alt={props.user.name} />
   </div>
 );
 
