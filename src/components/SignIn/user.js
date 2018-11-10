@@ -26,7 +26,7 @@ export default class User extends Component {
 
       <ul className={'user-menu' + (this.state.menuOpened ? ' opened' : '')}>
         <li>
-          <Link to="/profile">Edit your location</Link>
+          <Link to="/profile/edit-your-location" onClick={() => this.toggleMenuHandler()}>Edit your location</Link>
         </li>
         <li>
           <Link to="/" onClick={() => this.logoutHandler()}>Logout</Link>
