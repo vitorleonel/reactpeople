@@ -38,6 +38,7 @@ export const Container = styled.div`
     img {
       width: 3.5rem;
       border-radius: 9999px;
+      cursor: pointer;
     }
   }
 `;
