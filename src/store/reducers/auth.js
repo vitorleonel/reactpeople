@@ -1,4 +1,4 @@
-const INITIAL_STATE = {};
+const INITIAL_STATE = null;
 
 export default function auth(state = INITIAL_STATE, action) {
   switch(action.type) {

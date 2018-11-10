@@ -22,7 +22,6 @@ export const Container = styled.div`
     cursor: pointer;
 
     svg {
-      fill: currentColor;
       width: 2.5rem;
     }
   }

@@ -1,35 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Container } from './styles';
-
 
 import User from './user';
 import GitHubAuth from './github';
 
 class SignIn extends React.Component {
-
-  state = {
-    user: null,
-  }
-
-  authHandler = response => {
-    if(!response.code)
-      return;
-
-    this.setState({ user: response.code });
-  }
-
   render() {
     return (
       <Container>
         {
-          this.state.user
+          this.props.auth
           ? <User />
-          : <GitHubAuth authHandler={this.authHandler} />
+          : <GitHubAuth />
         }
       </Container>
     )
   }
-
 }
 
-export default SignIn;
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps)(SignIn);
