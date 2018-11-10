@@ -22,7 +22,7 @@ class SignIn extends React.Component {
       <Container>
         {
           this.props.auth
-          ? <User user={this.props.auth.user} />
+          ? <User user={this.props.auth.user} unsetAuth={this.props.unsetAuth} />
           : <GitHubAuth />
         }
       </Container>
@@ -36,6 +36,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setAuth: data => dispatch({ type: 'SET_AUTH', payload: data }),
+  unsetAuth: () => dispatch({ type: 'UNSET_AUTH' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

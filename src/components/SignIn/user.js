@@ -1,10 +1,37 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-const User = props => (
-  <div onClick={() => props.history.push('/profile')} className="user">
-    <img src={props.user.photo} alt={props.user.name} />
-  </div>
-);
+export default class User extends Component {
+  state = {
+    menuOpened: false,
+  };
 
-export default withRouter(User);
+  toggleMenuHandler = () => {
+    this.setState({ menuOpened: !this.state.menuOpened });
+  }
+
+  logoutHandler = () => {
+    window.localStorage.removeItem('@reactpeople:auth');
+
+    this.props.unsetAuth();
+  }
+
+  render() {
+    const { user } = this.props;
+
+    return <React.Fragment>
+      <div className="user" onClick={() => this.toggleMenuHandler()}>
+        <img src={user.photo} alt={user.name} />
+      </div>
+
+      <ul className={'user-menu' + (this.state.menuOpened ? ' opened' : '')}>
+        <li>
+          <Link to="/profile">Edit your location</Link>
+        </li>
+        <li>
+          <Link to="/" onClick={() => this.logoutHandler()}>Logout</Link>
+        </li>
+      </ul>
+    </React.Fragment>
+  }
+}

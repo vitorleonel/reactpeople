@@ -41,4 +41,36 @@ export const Container = styled.div`
       cursor: pointer;
     }
   }
+
+  .user-menu {
+    width: auto;
+    background-color: ${props => props.theme.colorNeutralDark};
+    padding: 1rem;
+    list-style: none;
+    box-shadow: ${props => props.theme.shadow};
+    border-radius: ${props => props.theme.radius};
+    position: absolute;
+    right: 0;
+    top: 3.75rem;
+    display: none;
+
+    li {
+      padding: 0.5rem;
+      white-space: nowrap;
+
+      a {
+        color: ${props => props.theme.colorNeutralLight};
+        text-decoration: none;
+
+        &:hover {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .user-menu.opened {
+    display: block;
+  }
 `;
