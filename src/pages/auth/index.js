@@ -13,9 +13,12 @@ class AuthPage extends Component {
   }
 
   authHandler = async code => {
-    const response = await api.post('/auth', { code });
+    try {
+      const { data } = await api.post('/auth', { code });
 
-    console.log(response);
+      window.localStorage.setItem('@reactpeople:access_token', data.access_token);
+      window.localStorage.setItem('@reactpeople:user', JSON.stringify(data.user));
+    } catch ({ response }) {}
 
     this.props.history.push('/');
   }
