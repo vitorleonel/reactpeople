@@ -10,13 +10,16 @@ import AuthPage from '../../pages/auth';
 const App = () => (
   <Wrapper>
     <GlobalStyle />
-    <MainMap />
-    <SignIn />
 
     <BrowserRouter>
-      <Switch>
-        <Route path="/auth" component={AuthPage} />
-      </Switch>
+      <React.Fragment>
+        <MainMap />
+        <SignIn />
+
+        <Switch>
+          <Route path="/auth" component={AuthPage} />
+        </Switch>
+      </React.Fragment>
     </BrowserRouter>
   </Wrapper>
 );
