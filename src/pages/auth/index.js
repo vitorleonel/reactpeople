@@ -18,7 +18,9 @@ class AuthPage extends Component {
 
       window.localStorage.setItem('@reactpeople:access_token', data.access_token);
       window.localStorage.setItem('@reactpeople:user', JSON.stringify(data.user));
-    } catch ({ response }) {}
+
+      this.props.setAuth(data);
+    } catch (error) {}
 
     this.props.history.push('/');
   }
@@ -30,7 +32,7 @@ class AuthPage extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  setAuthHandler: data => dispatch(),
+  setAuth: data => dispatch({ type: 'SET_AUTH', payload: data }),
 });
 
 export default connect(null, mapDispatchToProps)(AuthPage);
