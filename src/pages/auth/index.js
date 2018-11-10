@@ -16,8 +16,7 @@ class AuthPage extends Component {
     try {
       const { data } = await api.post('/auth', { code });
 
-      window.localStorage.setItem('@reactpeople:access_token', data.access_token);
-      window.localStorage.setItem('@reactpeople:user', JSON.stringify(data.user));
+      window.localStorage.setItem('@reactpeople:auth', JSON.stringify(data));
 
       this.props.setAuth(data);
     } catch (error) {}
