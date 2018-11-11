@@ -21,7 +21,7 @@ class SignIn extends React.Component {
     return (
       <Container>
         {
-          this.props.auth
+          this.props.auth.user
           ? <User user={this.props.auth.user} unsetAuth={this.props.unsetAuth} />
           : <GitHubAuth />
         }

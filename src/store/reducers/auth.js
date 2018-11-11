@@ -1,11 +1,17 @@
-const INITIAL_STATE = null;
+const INITIAL_STATE = {
+  access_token: null,
+  user: null,
+  location: null,
+};
 
 export default function auth(state = INITIAL_STATE, action) {
   switch(action.type) {
     case 'SET_AUTH':
-      return  { ...action.payload };
+      return  { ...state, ...action.payload };
     case 'UNSET_AUTH':
-      return  null;
+      return  INITIAL_STATE;
+    case 'SET_LOCATION':
+      return { ...state, location: action.payload }
     default:
       return state;
   }
