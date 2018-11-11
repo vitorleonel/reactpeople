@@ -6,6 +6,7 @@ import MainMap from '../MainMap';
 import SignIn from '../SignIn';
 
 import AuthPage from '../../pages/auth';
+import EditLocationPage from '../../pages/edit-location';
 
 const App = () => (
   <Wrapper>
@@ -18,6 +19,7 @@ const App = () => (
 
         <Switch>
           <Route path="/auth" component={AuthPage} />
+          <Route path="/profile/edit-your-location" component={EditLocationPage} />
         </Switch>
       </React.Fragment>
     </BrowserRouter>
