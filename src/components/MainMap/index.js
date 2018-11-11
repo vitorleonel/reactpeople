@@ -5,7 +5,7 @@ import { Map, TileLayer, ZoomControl, Marker } from 'react-leaflet';
 
 class MainMap extends Component {
   newLocationHandler = e => {
-    if(!this.props.location.pathname.includes('/profile/edit-your-location'))
+    if(!window.location.pathname.includes('/profile/edit-your-location'))
       return;
 
     this.props.setLocation(e.latlng);

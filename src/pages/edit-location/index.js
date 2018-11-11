@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { Container } from './styles';
+import { Container, Message, Button } from './styles';
 
 class EditLocation extends Component {
   newLocationHandler = () => {
@@ -12,12 +12,16 @@ class EditLocation extends Component {
   }
 
   render() {
-    return <Container confirm={this.props.markerLocation ? true : false} onClick={this.newLocationHandler}>
-      {
-        !this.props.markerLocation
-          ? 'Click on the map for set your new location'
-          : 'Click here to save your new location'
-      }
+    return <Container>
+      <Message>
+        {
+          !this.props.markerLocation
+            ? 'Click on the map for set your new location'
+            : 'This is your new location?'
+        }
+      </Message>
+
+      { this.props.markerLocation ? <Button>Save</Button> : null }
     </Container>
   }
 }
@@ -26,4 +30,8 @@ const mapStateToProps = state => ({
   markerLocation: state.auth.location,
 });
 
-export default connect(mapStateToProps)(EditLocation);
+const mapDispatchToProps = dispatch => ({
+  setLocation: location => dispatch({ type: 'SET_LOCATION', payload: location }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditLocation);
