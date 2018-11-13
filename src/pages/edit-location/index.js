@@ -2,13 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Container, Message, Button } from './styles';
+import api from '../../services/api';
 
 class EditLocation extends Component {
-  newLocationHandler = () => {
-    if(!this.props.markerLocation)
+  state = {
+    loading: false,
+  };
+
+  newLocationHandler = async () => {
+    if (!this.props.user.location)
       return;
 
-    console.log(this.props.markerLocation);
+    this.setState({ loading: true });
+
+    try {
+      await api.put(`/users/${this.props.user._id}/location`, this.props.markerLocation);
+
+      this.props.history.push('/');
+    } catch (error) {}
   }
 
   render() {
@@ -21,13 +32,18 @@ class EditLocation extends Component {
         }
       </Message>
 
-      { this.props.markerLocation ? <Button>Save</Button> : null }
+      {
+        this.props.markerLocation
+          ? <Button onClick={this.newLocationHandler}>{ this.state.loading ? 'Salvando...' : 'Salvar' }</Button>
+          : null
+      }
     </Container>
   }
 }
 
 const mapStateToProps = state => ({
   markerLocation: state.auth.location,
+  user: state.auth.user,
 });
 
 const mapDispatchToProps = dispatch => ({
