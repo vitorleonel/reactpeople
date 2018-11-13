@@ -1,7 +1,9 @@
-const INITIAL_STATE = [];
 
-export default function users(state = INITIAL_STATE, action) {
+export default function users(state = [], action) {
   switch(action.type) {
+    case 'SET_USERS':
+      return [ ...action.payload ];
+
     default:
       return state;
   }
