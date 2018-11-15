@@ -59,12 +59,11 @@ export const Container = styled.div`
       white-space: nowrap;
 
       a {
-        color: ${props => props.theme.colorNeutralLight};
+        color: ${props => props.theme.colorLink};
         text-decoration: none;
 
         &:hover {
           color: white;
-          text-decoration: underline;
         }
       }
     }
