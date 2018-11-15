@@ -1,49 +1,55 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 4rem;
-  height: 4rem;
   background-color: white;
-  padding:  0.75rem;
-  border-radius: 9999px;
+  padding: 0.75rem;
+  border-radius: ${props => props.theme.radius};
   box-shadow: ${props => props.theme.shadow};
   position: fixed;
   top: 1rem;
   right: 1rem;
   z-index: 1000;
+  cursor: pointer;
+  display: flex;
+  justify-items: center;
+
+  svg,
+  img {
+    width: 2.5rem;
+  }
+
+  img {
+    border-radius: 9999px;
+  }
+
+  .github,
+  .user {
+    display: flex;
+    align-items: center;
+  }
 
   .github {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
+    color: ${props => props.theme.colorNeutralDark};
+    text-decoration: none;
 
-    svg {
-      width: 3.5rem;
+    span {
+      padding-left: 0.75rem;
     }
   }
 
-  .user {
-    width: 4rem;
-    height: 4rem;
+  .user-info {
+    padding-left: 0.75rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    margin: -0.75rem;
+    flex-direction: column;
 
-    img {
-      width: 3.5rem;
-      border-radius: 9999px;
-      cursor: pointer;
+    &__email {
+      font-size: 0.87rem;
+      color: rgba(0, 0, 0, 0.5);
     }
   }
 
-  .user-menu {
-    width: auto;
+  .menu {
+    min-width: 100%;
     background-color: ${props => props.theme.colorNeutralDark};
     padding: 1rem;
     list-style: none;
@@ -59,18 +65,17 @@ export const Container = styled.div`
       white-space: nowrap;
 
       a {
-        color: ${props => props.theme.colorNeutralLight};
+        color: ${props => props.theme.colorLink};
         text-decoration: none;
 
         &:hover {
           color: white;
-          text-decoration: underline;
         }
       }
     }
   }
 
-  .user-menu.opened {
+  .menu.opened {
     display: block;
   }
 `;

@@ -1,7 +1,8 @@
 const theme = {
   colorNeutralLight: '#dae1e7',
-  colorNeutralDark: '#292929',
-  shadow: '0 2px 4px 0 rgba(0, 0 ,0 , 0.10)',
+  colorNeutralDark: '#282c34',
+  colorLink: '#61dafb',
+  shadow: '0 3px 6px 0 rgba(0, 0, 0, 0.2)',
   radius: '6px',
 };
 
