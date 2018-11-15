@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Map, TileLayer, ZoomControl, Marker } from 'react-leaflet';
+import { Map, TileLayer, ZoomControl, Marker, Tooltip } from 'react-leaflet';
 
 import api from '../../services/api';
 
@@ -33,7 +33,11 @@ class MainMap extends Component {
 
       { this.props.markerLocation ? <Marker position={this.props.markerLocation} /> : '' }
 
-      { this.props.users.map(user => <Marker position={[user.location.coordinates[1], user.location.coordinates[0]]} key={user._id} />) }
+      {
+        this.props.users.map(user => <Marker position={[user.location.coordinates[1], user.location.coordinates[0]]} key={user._id}>
+            <Tooltip>{user.name || user.username}</Tooltip>
+        </Marker>)
+      }
     </Map>
   }
 }
