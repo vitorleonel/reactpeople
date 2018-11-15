@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import NavigationIcon from '../../components/NavigationIcon';
+
 import { Container, Message, Button } from './styles';
 import api from '../../services/api';
 
@@ -24,6 +26,8 @@ class EditLocation extends Component {
 
   render() {
     return <Container>
+      <NavigationIcon to="/" />
+
       <Message>
         {
           !this.props.markerLocation
