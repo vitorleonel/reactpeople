@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: white;
-  padding:  0.75rem;
+  padding: 0.75rem;
   border-radius: ${props => props.theme.radius};
   box-shadow: ${props => props.theme.shadow};
   position: fixed;
@@ -22,19 +22,29 @@ export const Container = styled.div`
     border-radius: 9999px;
   }
 
+  .github,
   .user {
     display: flex;
     align-items: center;
+  }
 
-    &-info {
-      padding-left: 1rem;
-      display: flex;
-      flex-direction: column;
+  .github {
+    color: ${props => props.theme.colorNeutralDark};
+    text-decoration: none;
 
-      &__email {
-        font-size: 0.87rem;
-        color: rgba(0, 0, 0, 0.5);
-      }
+    span {
+      padding-left: 0.75rem;
+    }
+  }
+
+  .user-info {
+    padding-left: 0.75rem;
+    display: flex;
+    flex-direction: column;
+
+    &__email {
+      font-size: 0.87rem;
+      color: rgba(0, 0, 0, 0.5);
     }
   }
 
