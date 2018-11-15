@@ -24,8 +24,8 @@ export default class User extends Component {
         <img src={user.photo} alt={user.name} />
 
         <div className="user-info">
-          <span className="user-info__name">{user.namea || user.username}</span>
-          <span className="user-info__email">{user.emaila || 'not have e-mail'}</span>
+          <span className="user-info__name">{user.name || user.username}</span>
+          <span className="user-info__email">{user.email || 'not have e-mail'}</span>
         </div>
       </div>
 
