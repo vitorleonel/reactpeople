@@ -22,9 +22,14 @@ export default class User extends Component {
     return <React.Fragment>
       <div className="user" onClick={() => this.toggleMenuHandler()}>
         <img src={user.photo} alt={user.name} />
+
+        <div className="user-info">
+          <span className="user-info__name">{user.namea || user.username}</span>
+          <span className="user-info__email">{user.emaila || 'not have e-mail'}</span>
+        </div>
       </div>
 
-      <ul className={'user-menu' + (this.state.menuOpened ? ' opened' : '')}>
+      <ul className={'menu' + (this.state.menuOpened ? ' opened' : '')}>
         <li>
           <Link to="/profile/edit-your-location" onClick={() => this.toggleMenuHandler()}>Edit your location</Link>
         </li>

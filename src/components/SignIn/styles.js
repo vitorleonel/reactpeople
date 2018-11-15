@@ -1,49 +1,45 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 4rem;
-  height: 4rem;
   background-color: white;
   padding:  0.75rem;
-  border-radius: 9999px;
+  border-radius: ${props => props.theme.radius};
   box-shadow: ${props => props.theme.shadow};
   position: fixed;
   top: 1rem;
   right: 1rem;
   z-index: 1000;
+  cursor: pointer;
+  display: flex;
+  justify-items: center;
 
-  .github {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
+  svg,
+  img {
+    width: 2.5rem;
+  }
 
-    svg {
-      width: 3.5rem;
-    }
+  img {
+    border-radius: 9999px;
   }
 
   .user {
-    width: 4rem;
-    height: 4rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: absolute;
-    margin: -0.75rem;
 
-    img {
-      width: 3.5rem;
-      border-radius: 9999px;
-      cursor: pointer;
+    &-info {
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      &__email {
+        font-size: 0.87rem;
+        color: rgba(0, 0, 0, 0.5);
+      }
     }
   }
 
-  .user-menu {
-    width: auto;
+  .menu {
+    min-width: 100%;
     background-color: ${props => props.theme.colorNeutralDark};
     padding: 1rem;
     list-style: none;
@@ -69,7 +65,7 @@ export const Container = styled.div`
     }
   }
 
-  .user-menu.opened {
+  .menu.opened {
     display: block;
   }
 `;
