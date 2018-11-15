@@ -9,7 +9,6 @@ export const Container = styled.div`
   top: 1rem;
   right: 1rem;
   z-index: 1000;
-  cursor: pointer;
   display: flex;
   justify-items: center;
 
@@ -26,6 +25,7 @@ export const Container = styled.div`
   .user {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   .github {
