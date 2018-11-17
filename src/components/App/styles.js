@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: ${props => props.theme.colorNeutralLight};
     color: ${props => props.theme.colorNeutralDark};
   }

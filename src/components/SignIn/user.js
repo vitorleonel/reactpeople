@@ -29,14 +29,17 @@ export default class User extends Component {
         </div>
       </div>
 
-      <ul className={'menu' + (this.state.menuOpened ? ' opened' : '')}>
-        <li>
-          <Link to="/profile/edit-your-location" onClick={() => this.toggleMenuHandler()}>Edit your location</Link>
-        </li>
-        <li>
-          <Link to="/" onClick={() => this.logoutHandler()}>Logout</Link>
-        </li>
-      </ul>
+      <nav className={'menu' + (this.state.menuOpened ? ' opened' : '')}>
+        <Link to="/profile/edit-your-location" onClick={() => this.toggleMenuHandler()}>
+          <i aria-hidden="true" className="icon material-icons">pin_drop</i>
+          <span>Edit your location</span>
+        </Link>
+
+        <Link to="/" onClick={() => this.logoutHandler()}>
+          <i aria-hidden="true" className="icon material-icons">logout</i>
+          <span>Logout</span>
+        </Link>
+      </nav>
     </React.Fragment>
   }
 }

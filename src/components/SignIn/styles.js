@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: white;
-  padding: 0.75rem;
+  padding: 0.7rem;
   border-radius: ${props => props.theme.radius};
   box-shadow: ${props => props.theme.shadow};
   position: fixed;
@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 
   img {
-    border-radius: 9999px;
+    border-radius: 100%;
   }
 
   .github,
@@ -39,8 +39,8 @@ export const Container = styled.div`
 
   .user-info {
     padding-left: 0.75rem;
-    display: flex;
     flex-direction: column;
+    display: none;
 
     &__email {
       font-size: 0.87rem;
@@ -51,31 +51,38 @@ export const Container = styled.div`
   .menu {
     min-width: 100%;
     background-color: ${props => props.theme.colorNeutralDark};
-    padding: 1rem;
-    list-style: none;
+    padding: 0.75rem 0;
     box-shadow: ${props => props.theme.shadow};
     border-radius: ${props => props.theme.radius};
     position: absolute;
     right: 0;
-    top: 3.75rem;
+    top: 4.5rem;
     display: none;
 
-    li {
-      padding: 0.5rem;
+    a {
       white-space: nowrap;
+      padding: 1rem 1.5rem;
+      color: white;
+      text-decoration: none;
+      display: flex;
 
-      a {
-        color: ${props => props.theme.colorLink};
-        text-decoration: none;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
 
-        &:hover {
-          color: white;
-        }
+      span {
+        margin-left: 0.75rem;
       }
     }
   }
 
   .menu.opened {
     display: block;
+  }
+
+  @media screen and (min-width: 768px) {
+    .user-info {
+      display: flex;
+    }
   }
 `;
