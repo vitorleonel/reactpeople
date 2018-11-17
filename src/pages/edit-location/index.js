@@ -11,6 +11,15 @@ class EditLocation extends Component {
     loading: false,
   };
 
+  myCurrentLocationHandler = () => {
+    if(!('navigator' in window))
+      return;
+
+    window.navigator.geolocation.getCurrentPosition(position => {
+      this.props.setLocation({ lng: position.coords.longitude, lat: position.coords.latitude });
+    });
+  }
+
   newLocationHandler = async () => {
     if (!this.props.user.location)
       return;
@@ -29,11 +38,7 @@ class EditLocation extends Component {
       <NavigationIcon to="/" />
 
       <Message>
-        {
-          !this.props.markerLocation
-            ? 'Click on the map for set your new location'
-            : 'This is your new location?'
-        }
+        Click on the map or <span onClick={this.myCurrentLocationHandler}>click here</span> to set your location
       </Message>
 
       {
