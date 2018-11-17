@@ -17,6 +17,16 @@ export const Message = styled.div`
   box-shadow: ${props => props.theme.shadow};
   border-radius: ${props => props.theme.radius};
   padding: 1.25rem;
+
+  span {
+    color: ${props => props.theme.colorLink};
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const Button = styled.div`
