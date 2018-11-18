@@ -24,7 +24,7 @@ class MainMap extends Component {
   }
 
   render() {
-    return <Map center={[7.5609245, -28.1948357]} zoom={3} zoomControl={false} style={{height: '100vh'}} onClick={this.newLocationHandler}>
+    return <Map center={this.props.markerLocation ? this.props.markerLocation : [7.5609245, -28.1948357]} zoom={3} zoomControl={false} style={{height: '100vh'}} onClick={this.newLocationHandler}>
       <TileLayer
         url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}"
       />
@@ -38,7 +38,7 @@ class MainMap extends Component {
             <Tooltip>{user.name || user.username}</Tooltip>
         </Marker>)
       }
-    </Map>
+    </Map>;
   }
 }
 

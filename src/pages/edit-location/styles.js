@@ -2,13 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  margin-top: 1rem;
+  padding: 1rem 3.75rem 1.5rem 1rem;
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 0;
-  z-index: 999;
+  bottom: 0;
+  z-index: 500;
+
+  @media screen and (min-width: 768px) {
+    padding: 1.5rem;
+  }
 `;
 
 export const Message = styled.div`
@@ -16,24 +20,37 @@ export const Message = styled.div`
   color: ${props => props.theme.colorNeutralLight};
   box-shadow: ${props => props.theme.shadow};
   border-radius: ${props => props.theme.radius};
-  padding: 1.25rem;
+  padding: 1rem;
+  text-align: center;
 
   span {
     color: ${props => props.theme.colorLink};
-    font-weight: bold;
     cursor: pointer;
 
     &:hover {
       text-decoration: underline;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 1.45rem;
+  }
 `;
 
-export const Button = styled.div`
+export const ConfirmLocation = styled.div`
+  padding: 1.25rem;
   background-color: white;
   box-shadow: ${props => props.theme.shadow};
   border-radius: ${props => props.theme.radius};
-  padding: 1.25rem;
-  margin-left: 1rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 500;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+
+  .icon {
+    margin-right: 0.75rem;
+  }
 `;

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import NavigationIcon from '../../components/NavigationIcon';
-
-import { Container, Message, Button } from './styles';
+import { Container, Message, ConfirmLocation } from './styles';
 import api from '../../services/api';
 
 class EditLocation extends Component {
@@ -35,15 +33,17 @@ class EditLocation extends Component {
 
   render() {
     return <Container>
-      <NavigationIcon to="/" />
-
       <Message>
         Click on the map or <span onClick={this.myCurrentLocationHandler}>click here</span> to set your location
       </Message>
 
       {
         this.props.markerLocation
-          ? <Button onClick={this.newLocationHandler}>{ this.state.loading ? 'Salvando...' : 'Salvar' }</Button>
+          ? <ConfirmLocation onClick={this.newLocationHandler}>
+              <i aria-hidden="true" className="icon material-icons" onClick={this.closeOptionsHandler}>save</i>
+
+              { this.state.loading ? 'Saving...' : 'Save' }
+            </ConfirmLocation>
           : null
       }
     </Container>
