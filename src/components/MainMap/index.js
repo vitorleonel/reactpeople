@@ -23,6 +23,12 @@ class MainMap extends Component {
     this.props.setLocation(e.latlng);
   };
 
+  redirectToGithubHandler = username => {
+    if (!username) return;
+
+    window.open(`https://github.com/${username}`, "_blank");
+  };
+
   render() {
     return (
       <Map
@@ -53,6 +59,7 @@ class MainMap extends Component {
               user.location.coordinates[0]
             ]}
             key={user._id}
+            onClick={() => this.redirectToGithubHandler(user.username)}
           >
             <Tooltip>{user.name || user.username}</Tooltip>
           </Marker>
